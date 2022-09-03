@@ -12,43 +12,34 @@
     let datos = e.target
     //obtenemos los datos ingresados e enviados en el evento
   
-    console.log(datos.children[3].value)
-    console.log(datos.children[7].value)
-    console.log(datos.children[11].value)
-
-    let Nombre = datos.children[3].value;
-    let Correo = datos.children[7].value;
-    let NumeroTarjeta = datos.children[11].value;
+    //cargo los datos en las variables datos que vienen del index
+    let Nombre = document.getElementById("CNombreCompleto").value;
+    let Correo = document.getElementById("CCorreo").value;
+    let NumeroTarjeta = document.getElementById("CNumeroTarjeta").value;
     let todoBien = true;
 
-    //if (!Correo.contains("@") || !Correo.contains("."))
-    if( Correo == null || Correo.length == 0 || !isNaN(Correo))
-    {
+    //Realizo las validaciones de los tres campos del formulario
+    if( Correo == null || Correo.length == 0 || !isNaN(Correo))    {
         todoBien=false;
         swal("Datos Incompletos ", "Correo no es valido @ o (.) ", "error")
     }
-
-    if( NumeroTarjeta.length == 0 || NumeroTarjeta=="" || isNaN(NumeroTarjeta) ) {
-        todoBien=false;
-        swal("Datos Incompletos ", "No Ingreso los 16 digitos", "error")
-    }	
 
     if( Nombre == null || Nombre.length == 0 || /^\s+$/.test(Nombre) || !isNaN(Nombre)) {
         todoBien=false;
         swal("Datos Incompletos ", "No Ingreso el nombre", "error")
     }
 
-if (todoBien = true)
-{
-    swal("Gracias por su Compra ", "Gracias por su compra, enviamos un correo a su cuenta. Orden de Compra 125487", "success")
+    if( NumeroTarjeta.length == 0 || NumeroTarjeta=="" || isNaN(NumeroTarjeta) ) {
+        todoBien=false;
+        swal("Datos Incompletos ", "No Ingreso EL Numero de Tarjeta ", "error")
+    }
+
+    // Si todo esta correcto presento esta SweetAlert y confirmo que la orden se proceso sin problema
+if (todoBien == true){   
+     swal("Gracias por su Compra ", "Gracias por su compra, enviamos un correo a su cuenta. Orden de Compra 125487", "success")
 }
 
  }
-
-
-
-
-
 
 
 //Crear contenedorProductos

@@ -54,7 +54,7 @@ h1 {
 #boton-carrito:hover {
     cursor: pointer;
     color: white;
-    background-color: royalblue;
+    background-color: green;
 }
 
 #boton-carrito:focus {
@@ -87,6 +87,10 @@ p {
     font-weight: 600;
 }
 
+
+
+
+
 .boton-agregar {
     background-color: royalblue;
     color: white;
@@ -98,11 +102,17 @@ p {
 
 .boton-agregar:hover {
     cursor: pointer;
+    background-color: green;
+    color: white;
 }
 
 .boton-agregar:focus {
     outline: none;
 }
+
+
+
+
 
 
 .boton-confirmar {
